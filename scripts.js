@@ -1,4 +1,3 @@
-// Swiper.js Slider Configuration
 const swiper = new Swiper('.swiper-container', {
     loop: true,
     navigation: {
@@ -11,12 +10,10 @@ const swiper = new Swiper('.swiper-container', {
     },
 });
 
-// AOS.js Initialization
 AOS.init();
 
-// Fetch API for Services
 const servicesGrid = document.getElementById('services-grid');
-fetch('https://6713cc06690bf212c75fcbff.mockapi.io/api/v1/getServices') // Use sua API real
+fetch('https://6713cc06690bf212c75fcbff.mockapi.io/api/v1/getServices')
     .then(response => response.json())
     .then(data => {
         console.log(data);
@@ -81,7 +78,11 @@ contactForm.addEventListener('submit', function(event) {
     }
 
     // Enviar o formulário via EmailJS
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+    emailjs.init({
+        publicKey: 'lCxSo_oh7Kg3ZW2sr',
+    });
+
+    emailjs.sendForm('service_6hbsk1c', 'template_ypeqq6d', this)
         .then(() => {
             messageStatus.innerHTML = '<p class="text-success">Mensagem enviada com sucesso!</p>';
             contactForm.reset();

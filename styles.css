@@ -3,9 +3,38 @@ body {
     line-height: 1.6;
 }
 
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-toggler-icon {
+    color: #fff;
+}
+
+.navbar-nav .nav-link {
+    margin-left: 10px;
+}
+
+.swiper-wrapper{
+    position: initial;
+}
+
+.swiper-pagination{
+    position: initial;
+    margin-top: -50px;
+}
+
 #banner img {
     width: 100%;
     height: auto;
+}
+
+.item-hover a{
+    transition: 0.3s;
+}
+
+.item-hover:hover a{
+    border-bottom: 2px solid #00bfff;
 }
 
 footer .social-links a {
